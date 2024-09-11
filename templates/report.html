@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Log Report</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Change Log Report</h1>
+    <a href="{{ url_for('admin') }}" class="btn btn-primary mt-3">Back to Admin Dashboard</a>
+
+    <!-- Search and Filter Form -->
+    <form action="{{ url_for('report') }}" method="post" class="mt-3">
+      <div class="form-row">
+        <div class="col-md-3">
+          <input type="text" name="roll_number" class="form-control" placeholder="Roll Number">
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="username" class="form-control" placeholder="Username">
+        </div>
+        <div class="col-md-3">
+          <select name="change_type" class="form-control">
+            <option value="">All Change Types</option>
+            <option value="upload">Upload</option>
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </div>
+      </div>
+    </form>
+
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Roll Number</th>
+          <th>Username</th>
+          <th>Change Type</th>
+          <th>Change Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for change in changes %}
+        <tr>
+          <td>{{ change[5] }}</td>
+          <td>{{ change[1] }}</td>
+          <td>{{ change[2] }}</td>
+          <td>{{ change[3] }}</td>
+          <td>{{ change[4] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

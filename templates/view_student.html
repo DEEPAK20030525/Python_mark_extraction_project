@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Student</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>View Student</h1>
+    <table class="table table-bordered">
+      <tr>
+        <th>Roll Number</th>
+        <td>{{ student[1] }}</td>
+      </tr>
+      <tr>
+        <th>Username</th>
+        <td>{{ student[0] }}</td>
+      </tr>
+      <tr>
+        <th>Department</th>
+        <td>{{ student[2] }}</td>
+      </tr>
+      <tr>
+        <th>IAE 1</th>
+        <td>{{ student[3] }}</td>
+      </tr>
+      <tr>
+        <th>IAE 2</th>
+        <td>{{ student[4] }}</td>
+      </tr>
+      <tr>
+        <th>IAE 3</th>
+        <td>{{ student[5] }}</td>
+      </tr>
+    </table>
+    <a href="{{ url_for('student_details') }}" class="btn btn-primary mt-3">Back to Student Details</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Welcome, {{ roll_number }}</h1>
+            </div>
+            <div class="card-body">
+                <p class="text-center">Your details:</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Username:</strong> {{ data[0] }}</li>
+                    <li class="list-group-item"><strong>Roll Number:</strong> {{ data[1] }}</li>
+                    <li class="list-group-item"><strong>Department:</strong> {{ data[2] }}</li>
+                    <li class="list-group-item"><strong>IAE 1:</strong> {{ data[3] }}</li>
+                    <li class="list-group-item"><strong>IAE 2:</strong> {{ data[4] }}</li>
+                    <li class="list-group-item"><strong>IAE 3:</strong> {{ data[5] }}</li>
+                </ul>
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
